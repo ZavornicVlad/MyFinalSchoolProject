@@ -22,16 +22,30 @@
         </classes>
     </test>
 
-<!--    <test name="Invalid password">-->
-<!--        <parameter name="usernameP"  value="tomsmith"/>-->
-<!--        <parameter name="passwordP"  value="wrongpassword"/>-->
-<!--        <parameter name="errorP"  value="Your password is invalid!"/>-->
-<!--        <classes>-->
-<!--            <class name="com.herokuapp.NegativeLogin"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Succesful search">
+        <parameter name="searchMessageP"  value="solar"/>
 
-<!--    <test name="Logout">-->
+        <classes>
+            <class name="com.souqeshop.SearchSouqeshop"/>
+        </classes>
+    </test>
+
+    <test name="AddToCart">
+        <parameter name="cartDropdown"  value="pachet 5kw"/>-->
+        <classes>
+            <class name="com.souqeshop.AddToCartSouqeshop"/>
+        </classes>
+    </test>
+
+    <test name="Return to HomePage">-->
+            <parameter name="searchMessageP"  value="solar"/>
+
+            <classes>
+                <class name="com.souqeshop.ReturnToHomePage"/>
+            </classes>
+    </test>
+
+<!--    <test name="ReturnToHomePage">-->
 <!--        <parameter name="usernameP"  value="tomsmith"/>-->
 <!--        <parameter name="passwordP"  value="SuperSecretPassword!"/>-->
 <!--        <parameter name="messageP"  value="You logged out of the secure area!"/>-->
