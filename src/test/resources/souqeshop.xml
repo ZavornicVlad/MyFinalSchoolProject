@@ -7,20 +7,20 @@
 
         <parameter name="usernameP"  value="fxxenzo2024@gmail.com"/>
         <parameter name="passwordP"  value="ClujNapoca1984"/>
-        <parameter name="successMessageP"  value=""/>
+        <parameter name="successMessageP"  value="Buna ZavorniVlad"/>
         <classes>
             <class name="com.souqeshop.LoginSouqeshop"/>
         </classes>
     </test>
 
-<!--    <test name="Invalid username">-->
-<!--        <parameter name="usernameP"  value="wronguser"/>-->
-<!--        <parameter name="passwordP"  value="SuperSecretPassword!"/>-->
-<!--        <parameter name="errorP"  value="Your username is invalid!"/>-->
-<!--        <classes>-->
-<!--            <class name="com.herokuapp.NegativeLogin"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Succesful logout">
+        <parameter name="usernameP"  value="fxxenzo2024@gmail.com"/>
+        <parameter name="passwordP"  value="ClujNapoca1984"/>
+        <parameter name="messageP"  value="Logare sau Inregistrare"/>
+        <classes>
+            <class name="com.souqeshop.LogoutSouqeshop"/>
+        </classes>
+    </test>
 
 <!--    <test name="Invalid password">-->
 <!--        <parameter name="usernameP"  value="tomsmith"/>-->

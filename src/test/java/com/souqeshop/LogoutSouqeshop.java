@@ -1,18 +1,20 @@
 package com.souqeshop;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class LoginSouqeshop {
+public class LogoutSouqeshop {
     WebDriver driver;
     String url = "https://souqeshop.ro/";
 
@@ -33,15 +35,29 @@ public class LoginSouqeshop {
         driver.get(url);
         driver.manage().window().maximize();
     }
-    @Parameters({"usernameP","passwordP","successMessageP"})
-    @Test(testName = "login souqeshop")
 
+    @Parameters({"usernameP", "passwordP", "messageP"})
+    @Test(testName = "Succesful logout")
     public void loginTest(String username, String password, String message) {
-        sleep(2000);
-        login(username, password);
 
-        WebElement loginConfirm = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/section[1]/div/div[2]/div/div[4]/div/div/div/a/span"));
-        Assert.assertTrue(loginConfirm.getText().contains(message));
+        login(username, password);
+        sleep(5000);
+
+        WebElement loginButton = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/header[1]/div[1]/section[1]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/a[1]/span[1]"));
+        loginButton.click();
+        sleep(2000);
+
+        Actions action = new Actions(driver);
+        action.sendKeys(Keys.PAGE_DOWN).build().perform();
+
+        sleep(2000);
+
+        WebElement logoutButton = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[4]/section[2]/div[1]/div[1]/div[1]/div[1]/nav[1]/ul[1]/li[6]/a[1]"));
+        logoutButton.click();
+
+        WebElement logoutConfirm = driver.findElement(By.xpath("/html/body/div[1]/header/div[1]/section[1]/div/div[2]/div/div[4]/div/div/div"));
+        Assert.assertTrue(logoutConfirm.getText().contains(message));
+
     }
 
     private void login(String username, String password) {
@@ -61,13 +77,13 @@ public class LoginSouqeshop {
     }
 
     @AfterTest(alwaysRun = true)
-    public void tearDown(){
+    public void tearDown() {
         //Inchide pagina
         System.out.println("Inchide pagina");
         driver.close();
     }
 
-    public static void sleep(int miliseconds){
+    public static void sleep(int miliseconds) {
         try {
             Thread.sleep(miliseconds);
         } catch (InterruptedException e) {
@@ -75,3 +91,4 @@ public class LoginSouqeshop {
         }
     }
 }
+
