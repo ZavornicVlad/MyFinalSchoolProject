@@ -37,9 +37,10 @@ public class ReturnToHomePage {
         driver.get(url);
         driver.manage().window().maximize();
     }
+
     @Parameters({"searchMessageP"})
     @Test
-    public void searchTest(String mesage){
+    public void searchTest(String mesage) {
         WebElement searchField = driver.findElement(By.xpath("/html//header[@id='tbay-header']/div[@class='elementor elementor-3157']/section[2]/div/div[2]//div[@class='elementor-element elementor-element-054c69e elementor-widget elementor-widget-besa-search-form']//form[@action='https://souqeshop.ro/']//input[@name='s']"));
         searchField.sendKeys(mesage);
 
@@ -52,19 +53,19 @@ public class ReturnToHomePage {
         WebElement returnToHomePage = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/header[1]/div[1]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/img[1]"));
         returnToHomePage.click();
         String homeUrl = "https://souqeshop.ro/";
-        Assert.assertEquals(driver.getCurrentUrl(),homeUrl);
+        Assert.assertEquals(driver.getCurrentUrl(), homeUrl);
 
     }
 
 
     @AfterTest(alwaysRun = true)
-    public void tearDown(){
+    public void tearDown() {
         //Inchide pagina
         System.out.println("Inchide pagina");
         driver.close();
     }
 
-    public static void sleep(int miliseconds){
+    public static void sleep(int miliseconds) {
         try {
             Thread.sleep(miliseconds);
         } catch (InterruptedException e) {

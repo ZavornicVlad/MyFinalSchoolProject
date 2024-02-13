@@ -36,9 +36,10 @@ public class SearchSouqeshop {
         driver.get(url);
         driver.manage().window().maximize();
     }
+
     @Parameters({"searchMessageP"})
     @Test
-    public void searchTest(String mesage){
+    public void searchTest(String mesage) {
         WebElement searchField = driver.findElement(By.xpath("/html//header[@id='tbay-header']/div[@class='elementor elementor-3157']/section[2]/div/div[2]//div[@class='elementor-element elementor-element-054c69e elementor-widget elementor-widget-besa-search-form']//form[@action='https://souqeshop.ro/']//input[@name='s']"));
         searchField.sendKeys(mesage);
 
@@ -51,13 +52,13 @@ public class SearchSouqeshop {
 
 
     @AfterTest(alwaysRun = true)
-    public void tearDown(){
+    public void tearDown() {
         //Inchide pagina
         System.out.println("Inchide pagina");
         driver.close();
     }
 
-    public static void sleep(int miliseconds){
+    public static void sleep(int miliseconds) {
         try {
             Thread.sleep(miliseconds);
         } catch (InterruptedException e) {

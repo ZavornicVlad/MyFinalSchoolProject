@@ -33,7 +33,8 @@ public class LoginSouqeshop {
         driver.get(url);
         driver.manage().window().maximize();
     }
-    @Parameters({"usernameP","passwordP","successMessageP"})
+
+    @Parameters({"usernameP", "passwordP", "successMessageP"})
     @Test(testName = "login souqeshop")
 
     public void loginTest(String username, String password, String message) {
@@ -61,13 +62,13 @@ public class LoginSouqeshop {
     }
 
     @AfterTest(alwaysRun = true)
-    public void tearDown(){
+    public void tearDown() {
         //Inchide pagina
         System.out.println("Inchide pagina");
         driver.close();
     }
 
-    public static void sleep(int miliseconds){
+    public static void sleep(int miliseconds) {
         try {
             Thread.sleep(miliseconds);
         } catch (InterruptedException e) {

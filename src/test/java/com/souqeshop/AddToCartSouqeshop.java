@@ -21,19 +21,27 @@ public class AddToCartSouqeshop {
 
     @Parameters({"cartDropdown"})
     @BeforeTest
-    public void setUp(String browser){
-        switch (browser){
-            case "chrome": driver = new ChromeDriver();break;
-            case "edge": driver = new EdgeDriver();break;
-            case "firefox": driver = new FirefoxDriver();break;
-            default:driver = new ChromeDriver();
+    public void setUp(String browser) {
+        switch (browser) {
+            case "chrome":
+                driver = new ChromeDriver();
+                break;
+            case "edge":
+                driver = new EdgeDriver();
+                break;
+            case "firefox":
+                driver = new FirefoxDriver();
+                break;
+            default:
+                driver = new ChromeDriver();
         }
 
         driver.get(url);
         driver.manage().window().maximize();
     }
+
     @Test(testName = "AddToCart")
-    public void AddToCart(){
+    public void AddToCart() {
         sleep(2000);
 
         Actions action = new Actions(driver);
@@ -53,22 +61,20 @@ public class AddToCartSouqeshop {
         Assert.assertTrue(cartDropdown.getText().contains("pachet 5kw"));
 
 
-
         //String addToCart = addButton.getText();
         //at.sendKeys(Keys.PAGE_UP).build().perform();
-
 
 
     }
 
     @AfterTest(alwaysRun = true)
-    public void tearDown(){
+    public void tearDown() {
         //Inchide pagina
         System.out.println("Inchide pagina");
         driver.close();
     }
 
-    public static void sleep(int miliseconds){
+    public static void sleep(int miliseconds) {
         try {
             Thread.sleep(miliseconds);
         } catch (InterruptedException e) {
