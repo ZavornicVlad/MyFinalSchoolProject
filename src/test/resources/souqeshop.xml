@@ -3,30 +3,22 @@
 <suite name="Suite2" verbose="1">
     <parameter name ="browserP" value ="chrome"/>
 
-<!--    <test name="Successful login">-->
+    <test name="Successful login">
 
-<!--        <parameter name="usernameP"  value="fxxenzo2024@gmail.com"/>-->
-<!--        <parameter name="passwordP"  value="ClujNapoca1984"/>-->
-<!--        <parameter name="successMessageP"  value="Buna ZavorniVlad"/>-->
-<!--        <classes>-->
-<!--            <class name="com.souqeshop.LoginSouqeshop"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test name="Succesful logout">-->
-<!--        <parameter name="usernameP"  value="fxxenzo2024@gmail.com"/>-->
-<!--        <parameter name="passwordP"  value="ClujNapoca1984"/>-->
-<!--        <parameter name="messageP"  value="Logare sau Inregistrare"/>-->
-<!--        <classes>-->
-<!--            <class name="com.souqeshop.LogoutSouqeshop"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-    <test name="Succesful search">
-        <parameter name="searchMessageP"  value="solar"/>
-
+        <parameter name="usernameP"  value="fxxenzo2024@gmail.com"/>
+        <parameter name="passwordP"  value="ClujNapoca1984"/>
+        <parameter name="successMessageP"  value="Buna ZavorniVlad"/>
         <classes>
-            <class name="com.souqeshop.SearchSouqeshop"/>
+            <class name="com.souqeshop.LoginSouqeshop"/>
+        </classes>
+    </test>
+
+    <test name="Succesful logout">
+        <parameter name="usernameP"  value="fxxenzo2024@gmail.com"/>
+        <parameter name="passwordP"  value="ClujNapoca1984"/>
+        <parameter name="messageP"  value="Logare sau Inregistrare"/>
+        <classes>
+            <class name="com.souqeshop.LogoutSouqeshop"/>
         </classes>
     </test>
 
@@ -37,6 +29,7 @@
             <class name="com.souqeshop.SearchSouqeshop"/>
         </classes>
     </test>
+
 
     <test name="AddToCart">
         <parameter name="cartDropdown"  value="pachet 5kw"/>-->

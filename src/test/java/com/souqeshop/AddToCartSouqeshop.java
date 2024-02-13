@@ -39,9 +39,9 @@ public class AddToCartSouqeshop {
         Actions action = new Actions(driver);
         action.sendKeys(Keys.PAGE_DOWN).build().perform();
 
-        WebElement addButton = driver.findElement(By.xpath("//button[@name='add-to-cart']"));
-        String string = addButton.getText();
-        action.sendKeys(Keys.PAGE_UP).build().perform();
+        WebElement addButton = driver.findElement(By.name("add-to-cart"));
+        //action.sendKeys(Keys.PAGE_UP).build().perform();
+        sleep(2000);
 
         addButton.click();
 
